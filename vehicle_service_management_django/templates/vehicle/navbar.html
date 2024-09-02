@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style type="text/css">
+    .navbar {
+      background-color: #4f55c7; /* Dark purple background */
+    }
+
+    .navbar-brand {
+      /* Larger font size for brand */
+      color: yellow; /* Yellow text color */
+    }
+
+    .navbar-toggler {
+      border-color: yellow; 
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      color: white; 
+    }
+
+    .navbar-nav .nav-item .nav-link:hover {
+      color: #ffc107; 
+      #carImageContainer {
+      max-width: 100px; 
+      margin: auto; 
+    }
+  }
+    #carImageContainer {
+      max-width: 100px; 
+      margin: auto; 
+    }
+
+    #carImage {
+      max-width: 50%; 
+      height: auto; 
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand"> Vehicle Service Management</a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ml-auto">
+          <a href="/" class="nav-item nav-link active">Home</a>
+          <a href="/customerclick" class="nav-item nav-link">Customer</a>
+          <a href="/mechanicsclick" class="nav-item nav-link">Mechanics</a>
+          <a href="/adminclick" class="nav-item nav-link">Admin</a>
+          <a href="/aboutus" class="nav-item nav-link">About Us</a>
+          <a href="contactus" class="nav-item nav-link">Contact Us</a>
+          
+          
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Gallery
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#" onclick="showCarImage('toyota_camry')">Toyota</a>
+                <a class="dropdown-item" href="#" onclick="showCarImage('tvs_civic')">tvs</a>
+                <a class="dropdown-item" href="#" onclick="showCarImage('suzuki_civic')">Suzuki</a>
+                <a class="dropdown-item" href="#" onclick="showCarImage('rolls_civic')">Rolls</a>
+
+                
+            </div>
+          </div>
+             </div>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="container mt-5">
+
+    <div id="carImageContainer" class="text-center">
+        <img id="carImage" src="" alt="Car Image" class="img-fluid">
+    </div>
+  </div>
+
+
+<script>
+  function showCarImage(carName) {
+      
+      const carImages = {
+          toyota_camry: '{% static "images/tata.png" %}',
+          honda_civic: '{% static "images/tvs.png" %}',
+          suzuki_civic: '{% static "images/suzuki.png" %}',
+          rolls_civic: '{% static "images/rolls.png" %}',
+          
+      };
+
+      
+      const carImageElement = document.getElementById('carImage');
+
+      carImageElement.src = carImages[carName];
+  }
+</script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

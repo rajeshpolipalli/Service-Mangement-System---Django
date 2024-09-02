@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vehicle Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style media="screen">
+    .jumbotron {
+      background-image: url('{% static "images/bg4.png" %}');
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 100px 0; /* Adjust padding as needed */
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+      color: white; /* Text color for the heading */
+    }
+
+    .marquee-container {
+      overflow: hidden;
+    }
+
+    .marquee-content {
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    /* Style for the cards */
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-title {
+      font-weight: bold;
+    }
+
+    .card-text {
+      font-size: 16px;
+    }
+
+
+
+    /* ------section --------history  */
+
+
+
+  .card {
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    background-color: #6f96bc; /* Change color on hover */
+  }
+
+  .card-title {
+    font-weight: bold;
+    color: #333; /* Card title color */
+  }
+
+  .card-text {
+    font-size: 16px;
+    color: #555; /* Card text color */
+  }
+
+
+  </style>
+</head>
+
+<body>
+  {% include "vehicle/navbar.html" %}
+
+  <div class="jumbotron jumbotron-fluid bg-dark text-white py-5">
+    <div class="container text-center">
+        <h1 class="display-4 mb-4">Welcome to Our Vehicle Page</h1>
+        <p class="lead">Explore our range of vehicle services and keep your car in top condition!</p>
+        <a href="{% url 'customersignup' %}" class="btn btn-primary btn-lg mt-3">Discover Services</a>
+    </div>
+</div>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="marquee-container">
+          <div class="marquee-content">
+            <img src="{% static "images/ferrari.png" %}" width="120" height="80" alt="Ferrari" class="mr-3">
+            <img src="{% static "images/ford.png" %}" width="120" height="80" alt="Ford" class="mr-3">
+            <img src="{% static "images/lambo.png" %}" width="120" height="80" alt="Lamborghini" class="mr-3">
+            <img src="{% static "images/mahindra.png" %}" width="120" height="80" alt="Mahindra" class="mr-3">
+            <img src="{% static "images/tvs.png" %}" width="120" height="80" alt="TVS" class="mr-3">
+            <img src="{% static "images/tata.png" %}" width="120" height="80" alt="Tata" class="mr-3">
+            <img src="{% static "images/hero.png" %}" width="120" height="80" alt="Hero" class="mr-3">
+            <img src="{% static "images/rolls.png" %}" width="120" height="80" alt="Rolls Royce" class="mr-3">
+            <img src="{% static "images/suzuki.png" %}" width="120" height="80" alt="Suzuki" class="mr-3">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section id="history">
+    <div class="container">
+      <h2 class="section-heading text-center mb-5">Our History</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Establishment</h5>
+              <p class="card-text">Web Based Vehicle Service Management was founded in 2024 by Neeraj. Our journey began with a small team of passionate individuals dedicated to providing exceptional automotive services to our community.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Expansion</h5>
+              <p class="card-text">Over the years, we have grown steadily, expanding our services and customer base. Our commitment to quality and customer satisfaction has enabled us to become a trusted name in the automotive industry.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Innovation</h5>
+              <p class="card-text">Web Based Vehicle Service Management continues to innovate and adapt to meet the evolving needs of our customers. We invest in the latest technologies and training to ensure that we deliver the best possible service.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+        <!-- Services Section -->
+        <section class="bg-light py-5">
+          <div class="container">
+              <div class="row align-items-center">
+                  <div class="col-lg-6">
+                      <img src="{% static 'images/lambo.png' %}" alt="Services Image" class="img-fluid rounded shadow-lg">
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="text-center text-lg-left">
+                          <h2 class="mb-4">Our Services</h2>
+                          <p class="lead mb-4">Keep your car running smoothly with our comprehensive vehicle services:</p>
+                          <ul class="list-unstyled mb-4">
+                              <li><i class="fa fa-check-circle text-success mr-2"></i> Regular maintenance and inspections</li>
+                              <li><i class="fa fa-check-circle text-success mr-2"></i> Diagnostic services for engine and electrical issues</li>
+                              <li><i class="fa fa-check-circle text-success mr-2"></i> Brake system inspection and repair</li>
+                              <li><i class="fa fa-check-circle text-success mr-2"></i> Fluid checks and replacements</li>
+                              <li><i class="fa fa-check-circle text-success mr-2"></i> Engine tuning and performance optimization</li>
+                          </ul>
+                          <a href="{% url 'customersignup' %}" class="btn btn-primary btn-lg">Contact Us</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      
+      
+      <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="card border-0 rounded-lg shadow">
+                        <img src="{% static 'images/tvs.png' %}" alt="Vehicle Mission Image" class="card-img-top">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <h2 class="mb-4">Our Mission</h2>
+                        <p class="lead">Our mission is to provide reliable, high-quality vehicle services to our community. We are committed to ensuring the safety and satisfaction of our customers by delivering exceptional automotive care and support.</p>
+                        <div class="text-center">
+                            <a href="{% url 'customerlogin' %}" class="btn btn-primary btn-lg">Explore Services</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="about" class="bg-light py-5">
+      <div class="container">
+          <h2 class="section-heading text-center mb-5">About Us</h2>
+          <div class="row">
+              <div class="col-md-8 offset-md-2">
+                  <div class="card shadow-lg p-4">
+                      <p class="lead text-center mb-4"> your one-stop solution for all your vehicle service needs. Our company is dedicated to providing high-quality and reliable vehicle maintenance and repair services to customers in [Ghatkopar]. With years of experience in the automotive industry, we take pride in offering exceptional service and customer satisfaction.</p>
+                      <p class="text-center">At Vehicle Service Management, we understand the importance of keeping your vehicle in top condition. Our team of skilled mechanics and technicians is committed to delivering efficient and professional service, whether you need routine maintenance, diagnostics, or major repairs.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+
+ 
+</main>
+  {% include "vehicle/footer.html" %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper
